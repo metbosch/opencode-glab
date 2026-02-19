@@ -10,7 +10,7 @@ The image is build on top of `ghcr.io/anomalyco/opencode` and provides the follw
   - coreutils
 - Extra opencode commands:
   - mr-review
-    Performs a Merge request review
+    Performs a Merge request review. It will check the changes, related issues, provide inline feedback and approve/reject the MR.
 
 The image can be used with Gitlab webhooks to react to MR and issues comments like `@opencode review this` or `@opencode implement this`.
 
