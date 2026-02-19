@@ -50,7 +50,7 @@ bash$ docker run --rm -v ./my-opencode-config.json:/root/.config/opencode/config
 The follwoing example shows a complete docker command to perform a MR review.
 
 ```sh
-bash$ docker run --rm -v ./my-opencode-config.json:/root/.config/opencode/config.json -e GITLAB_HOST=gitlab.company.com -e GITLAB_AUTH_TOKEN=glpat-123456789 -e PROJECT_URL=https://gitlab.company.com/group/project1 -e MERGE_REQUEST_IID=123 opencode-glab-docker opencode run --command mr-review
+bash$ docker run --rm -v ./my-opencode-config.json:/root/.config/opencode/config.json -e GITLAB_HOST=gitlab.company.com -e GITLAB_AUTH_TOKEN=glpat-123456789 -e PROJECT_URL=https://gitlab.company.com/group/project1 -e MERGE_REQUEST_IID=123 ghcr.io/metbosch/opencode-glab opencode run --command mr-review
 ```
 
 ## Gitlab integration
