@@ -170,7 +170,7 @@ line numbers, and pre/post diff versions when crafting your comment.
 
 ## Review
 Once you have the information and are ready to leave a review on GitLab, post the review to GitLab using the glab command interface:
-1. Ensure you are one of MR reviewers. If not add yourself using the glab command: `glab mr update <mr_id> --reviewer +<username>`.
+1. Ensure you are one of MR reviewers. If not add yourself using the glab command: `glab mr update <mr_iid> --reviewer +<username>`.
 2. Adding review comments.
     2.1 Use the glab command to add comments to the review. Inline comments are preferred whenever possible, so repeat this step, calling glab command, as needed. All comments about specific lines of code should use inline comments. It is preferred to use code suggestions when possible, which include a code block that is labeled "suggestion", which contains what the new code should be. All comments should also have a severity.
       Prepend a severity emoji to each comment:
@@ -180,15 +180,7 @@ Once you have the information and are ready to leave a review on GitLab, post th
       - 🔴 for critical severity
       - 🔵 if severity is unclear
 
-      Including all of this, an example inline comment would be:
-      <COMMENT>
-      🟢 Use camelCase for function names
-      ```suggestion
-      myFooBarFunction
-      ```
-      </COMMENT>
-
-    2.2 Crafting the summary comment: Include a summary of high level points that were not addressed with inline comments. Be concise. Do not repeat details mentioned inline.
+    2.2 Crafting the summary comment: Include a summary of high level points that were not addressed with inline comments. Be concise. Do not repeat details mentioned inline. Use command `glab mr note <mr_iid>`.
 
       Structure your summary comment using this exact format with markdown:
       ## 📋 Review Summary
@@ -202,7 +194,9 @@ Once you have the information and are ready to leave a review on GitLab, post th
       - Highlight positive aspects of the implementation
       - Note any recurring themes across files
 
-3. Final review decision: Based on the inline and summary feedback, submit a merge request review and either approve (`glab mr approve <mr_id>`) or request changes (`glab mr revoke <mr_id>`).
+3. Final review decision: Based on the inline and summary feedback, submit a merge request review:
+   - Approve. Execute command (with no exta options) `glab mr approve <mr_iid>`
+   - Request changes. Execute command (with no exta options) `glab mr revoke <mr_iid>`
 
 ## Final Instructions
 Remember, you are running in a VM and no one reviewing your output. Your review must be posted to GitLab using the glab commant to create a MR review, adding comments, and submitting the final desision.
