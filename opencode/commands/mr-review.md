@@ -194,9 +194,9 @@ Once you have the information and are ready to leave a review on GitLab, post th
       - Highlight positive aspects of the implementation
       - Note any recurring themes across files
 
-3. Final review decision: Based on the inline and summary feedback, submit a merge request review:
-   - Approve. Execute command (with no exta options) `glab mr approve <mr_iid>`
-   - Request changes. Execute command (with no exta options) `glab mr note <mr_iid> -m "/request_changes"`
+3. Final review decision: Based on the inline and summary feedback, submit a merge request review using the available tools:
+   - Approve: Use the `mr-actions_approve` tool with the mr_iid parameter
+   - Request changes: Use the `mr-actions_revoke` tool with the mr_iid parameter
 
 ## Final Instructions
 Remember, you are running in a VM and no one reviewing your output. Your review must be posted to GitLab using the glab commant to create a MR review, adding comments, and submitting the final desision.
