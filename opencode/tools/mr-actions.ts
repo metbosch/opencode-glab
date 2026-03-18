@@ -28,3 +28,20 @@ export const revoke = tool({
     return result.trim()
   },
 })
+
+type MrAddReviewerTool = {
+  mr_iid: number
+  username: string
+}
+
+export const addReviewer = tool({
+  description: "Add a user as a reviewer on a GitLab merge request",
+  args: {
+    mr_iid: tool.schema.string().describe("Merge request IID (internal ID)"),
+    username: tool.schema.string().describe("GitLab username to add as a reviewer"),
+  },
+  async execute(args: MrAddReviewerTool) {
+    const result = await Bun.$`glab mr update ${args.mr_iid} --reviewer +${args.username}`.text()
+    return result.trim()
+  },
+})
