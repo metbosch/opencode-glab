@@ -16,7 +16,7 @@ ENV MERGE_REQUEST_IID=0
 ENV ADDITIONAL_COMMENTS=""
 
 RUN apk update \
-  && apk add --no-cache jq bash git coreutils glab
+  && apk add --no-cache jq bash git coreutils glab python3
 
 RUN mkdir -p /root/.config/opencode
 COPY opencode /root/.config/opencode/
