@@ -21,7 +21,7 @@ The image can be used with Gitlab webhooks to react to MR and issues comments li
 
 ## Environment variables
 The image requires callers to provide a minimal information using environment variables:
-- *GITLAB_AUTH_TOKEN*. Token to autenticate into gitlab. Must have at least the following permisions: `api, write_repository`.
+- *GITLAB_TOKEN*. Token to autenticate into gitlab. Must have at least the following permisions: `api, write_repository`.
 - *PROJECT_URL*. URL of git repository inside *GITLAB_HOST*. Example: `https://gitlab.company.com/group/project1`.
 - *MERGE_REQUEST_IID* (mandatory for `mr-review` command). Merge request identifier within *PROJECT_URL* that will be reviewed.
 - *ADDITIONAL_COMMENTS* (optional). Additional comments/considerations for agent during command execution.
@@ -58,7 +58,7 @@ The follwoing example shows a complete docker command to perform a MR review.
 bash$ docker run --rm \
   -v ./my-opencode-config.json:/root/.config/opencode/config.json \
   -e GITLAB_HOST=gitlab.company.com \
-  -e GITLAB_AUTH_TOKEN=glpat-123456789 \
+  -e GITLAB_TOKEN=glpat-123456789 \
   -e PROJECT_URL=https://gitlab.company.com/group/project1 \
   -e MERGE_REQUEST_IID=123 \
   ghcr.io/metbosch/opencode-glab \

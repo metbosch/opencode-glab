@@ -6,7 +6,7 @@ LABEL maintainer="@metbosch"
 
 # Set default environment variables for GitLab authentication and configuration
 ENV GITLAB_HOST=gitlab.com
-ENV GITLAB_AUTH_TOKEN=invalid-auth-token
+ENV GITLAB_TOKEN=invalid-auth-token
 ENV GITLAB_API_PROTOCOL=https
 ENV GITLAB_GIT_PROTOCOL=https
 
