@@ -8,14 +8,7 @@ The image is build on top of `ghcr.io/anomalyco/opencode` and provides the follw
   - jq
   - bash
   - coreutils
-- Extra opencode commands:
-  - mr-review
-    Performs a Merge request review. It will check the changes, related issues, provide inline feedback and approve/reject the MR.
-- Custom opencode tools:
-  - mr-actions_approve
-    Approves a GitLab merge request using `glab mr approve`.
-  - mr-actions_revoke
-    Requests changes on a GitLab merge request (revokes approval) using `glab mr revoke`.
+- [opencode-gitlab-plugin](https://gitlab.com/vglafirov/opencode-gitlab-plugin)
 
 The image can be used with Gitlab webhooks to react to MR and issues comments like `@opencode review this` or `@opencode implement this`.
 

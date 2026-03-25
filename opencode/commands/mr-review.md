@@ -170,7 +170,8 @@ line numbers, and pre/post diff versions when crafting your comment.
 
 ## Review
 Once you have the information and are ready to leave a review on GitLab, post the review to GitLab using the glab command interface:
-1. Ensure you are one of MR reviewers. If not, use the `gitlab-user_getCurrentUser` tool to get your username, then use the `mr-actions_addReviewer` tool with the `mr_iid` and that `username`.
+0. Check who you are within gitlab using `gitlab_get_current_user`.
+1. Ensure you are one of MR reviewers. If not, use the `gitlab_add_mr_reviewer` tool to add you as a MR reviewer.
 2. Adding review comments.
     2.1 Inline comments are preferred whenever possible, so repeat this step, calling glab command (`glab api projects/<project_id>/merge_requests/<mr_iid>/discussions -X POST -f "body=<comment>" -f "position[base_sha]=<base_sha>" -f "position[start_sha]=<start_sha>" -f "position[head_sha]=<head_sha>" -f "position [position_type]=text" -f "position[new_path]=<filename>" -f "position[new_line]=<num_line>"`), as needed. All comments about specific lines of code should use inline comments. It is preferred to use code suggestions when possible, which include a code block that is labeled "suggestion", which contains what the new code should be. All comments should also have a severity.
       Prepend a severity emoji to each comment:
@@ -180,7 +181,7 @@ Once you have the information and are ready to leave a review on GitLab, post th
       - 🔴 for critical severity
       - 🔵 if severity is unclear
 
-    2.2 Crafting the summary comment: Include a summary of high level points that were not addressed with inline comments. Be concise. Do not repeat details mentioned inline. Use the following glab command: `glab mr note <mr_iid> -m <message>`.
+    2.2 Crafting the summary comment: Include a summary of high level points that were not addressed with inline comments. Be concise. Do not repeat details mentioned inline. Use the tool `gitlab_create_note` to post the summary.
 
       Structure your summary comment using this exact format with markdown:
       ## 📋 Review Summary
@@ -195,8 +196,8 @@ Once you have the information and are ready to leave a review on GitLab, post th
       - Note any recurring themes across files
 
 3. Final review decision: Based on the inline and summary feedback, submit a merge request review using the available tools:
-   - Approve: Use the `mr-actions_approve` tool with the mr_iid parameter
-   - Request changes: Use the `mr-actions_revoke` tool with the mr_iid parameter
+   - Approve: Use the `gitlab_approve_merge_request` tool
+   - Request changes: Use the `gitlab_unapprove_merge_request` tool
 
 ## Final Instructions
 Remember, you are running in a VM and no one reviewing your output. Your review must be posted to GitLab using the glab commant to create a MR review, adding comments, and submitting the final desision.
