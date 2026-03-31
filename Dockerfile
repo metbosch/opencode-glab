@@ -5,7 +5,7 @@ FROM ${IMAGE}:${TAG}
 LABEL maintainer="@metbosch"
 
 # Set default environment variables for GitLab authentication and configuration
-ENV GITLAB_INSTANCE_URL=gitlab.com
+ENV GITLAB_HOST=gitlab.com
 ENV GITLAB_TOKEN=invalid-auth-token
 ENV GITLAB_API_PROTOCOL=https
 ENV GITLAB_GIT_PROTOCOL=https
