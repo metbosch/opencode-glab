@@ -21,6 +21,7 @@ The image requires callers to provide a minimal information using environment va
 - *GITLAB_HOST* (optional). Default: `gitlab.com`.
 - *GITLAB_API_PROTOCOL* (optional). Default: `https`.
 - *GITLAB_GIT_PROTOCOL* (optional). Default: `https`.
+- *GITLAB_INSTANCE_URL* (optional). If set, overrides both *GITLAB_HOST* and *GITLAB_API_PROTOCOL* by parsing the protocol and host from the URL (e.g., `https://gitlab.company.com`). Default: `${GITLAB_API_PROTOCOL}://${GITLAB_HOST}`.
 
 ## Opencode configuration
 The image has the general opencode configuration in folder `/root/.config/opencode`.

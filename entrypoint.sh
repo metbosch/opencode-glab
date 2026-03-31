@@ -1,5 +1,18 @@
 #!/bin/sh
+
 set -e
+
+
+# Bidirectional sync between GITLAB_INSTANCE_URL and GITLAB_API_PROTOCOL/GITLAB_HOST
+if [ -n "$GITLAB_INSTANCE_URL" ]; then
+  # If GITLAB_INSTANCE_URL is set, parse it to set GITLAB_HOST and GITLAB_API_PROTOCOL
+  proto_host=$(echo "$GITLAB_INSTANCE_URL" | sed -E 's#(https?)://([^/]+).*#\1 \2#')
+  GITLAB_API_PROTOCOL=$(echo $proto_host | awk '{print $1}')
+  GITLAB_HOST=$(echo $proto_host | awk '{print $2}')
+else
+  # If not set, construct GITLAB_INSTANCE_URL from protocol and host
+  GITLAB_INSTANCE_URL="${GITLAB_API_PROTOCOL}://${GITLAB_HOST}"
+fi
 
 # Setup auth in glab and git commands
 glab auth login \

@@ -9,6 +9,7 @@ ENV GITLAB_HOST=gitlab.com
 ENV GITLAB_TOKEN=invalid-auth-token
 ENV GITLAB_API_PROTOCOL=https
 ENV GITLAB_GIT_PROTOCOL=https
+ENV GITLAB_INSTANCE_URL=""
 
 # Set a default project URL for cloning (this should be overridden with a valid URL in production)
 ENV PROJECT_URL=invalid-project-url
