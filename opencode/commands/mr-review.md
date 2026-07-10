@@ -182,7 +182,7 @@ Once you have the information and are ready to leave a review on GitLab, post th
       - 🔴 for critical severity
       - 🔵 if severity is unclear
 
-    2.2 Crafting the summary comment: Include a summary of high level points that were not addressed in threads. Be concise. Do not repeat details mentioned inline. Use the tool `gitlab_create_note` to post the summary.
+    2.2 Crafting the summary comment: Include a summary of high level points that were not addressed in threads. Be concise. Do not repeat details mentioned inline. Use the gitlab_create_note tool to post the summary.
 
       Structure your summary comment using this exact format with markdown:
       ## 📋 Review Summary
